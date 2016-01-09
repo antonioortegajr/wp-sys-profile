@@ -17,5 +17,7 @@ Is a MultiSite
 Current Theme
 Array of installed plugins
 
+If you have security concerns about displaying this kind of information publicly, fork this repo and remove any of the info you like. Or add in some level of security. Pulls welcome.
+
 
 Live example of this on my site: http://antonioortegajr.com/wp-json/sys_profile/v1/profile
