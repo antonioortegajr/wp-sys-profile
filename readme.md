@@ -1,4 +1,5 @@
 WP Sys Profile
+============================================
 
 This plugin creates a custom REST API Endpoint that displays information on the WordPress install and the stack it runs on.
 
