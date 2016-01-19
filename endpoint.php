@@ -3,7 +3,7 @@
 Plugin Name: WP Sys Profile
 Plugin URI: http://antonioortegajr.com
 Description: This plugin creates a custom REST API Endpoint that displays information on the WordPress install and the stack it runs on.
-Version: 1.0.0
+Version: 1.0.1
 Author: Antonio Ortega Jr
 Author URI: http://antonioortegajr.com
 License: GPL2
@@ -70,12 +70,13 @@ if ($api_key == '1234567890') {
   $all_plugins = get_plugins();
   //profile this WordPress account
       $output = array(
-      //'url'=>get_site_url(),
-      //'php_version'=>phpversion(),
-      //'wordpress_Version'=>get_bloginfo('version'),
-      //'encoding'=>get_bloginfo('charset'),
-      //'multi_site'=>is_multisite(),
-      //'current_theme'=>get_current_theme(),
+      'url'=>get_site_url(),
+      'php_version'=>phpversion(),
+      'memory_limit'=>ini_get("memory_limit"),
+      'wordpress_Version'=>get_bloginfo('version'),
+      'encoding'=>get_bloginfo('charset'),
+      'multi_site'=>is_multisite(),
+      'current_theme'=>get_current_theme(),
       'installed_plugins'=>$all_plugins
       );
 }
