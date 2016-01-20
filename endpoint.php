@@ -63,8 +63,7 @@ $headers = array(getallheaders());
 $api_key = $headers[0][Apikey];
 if ($api_key == '1234567890') {
 
-//look for cURL
-//thanks to thanks to http://www.mattsbits.co.uk/item-164.html for this bit
+//look for cURL thanks to thanks to http://www.mattsbits.co.uk/item-164.html for this bit
 // Define function to test
 function _is_curl_installed() {
 	if  (in_array  ('curl', get_loaded_extensions())) {
@@ -94,7 +93,6 @@ foreach ($all_plugins as $key => $value) {
   $plugin_private_info = $value[Name].','.$value["Version"].','.$value["PluginURI"];
   array_push($plugin_info, $plugin_private_info);
 }
-
 
 
   //profile this WordPress account private
