@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="WP-Sys-Profile : This plugin creates a custom REST API Endpoint that displays information on the WordPress install and the stack it runs on.">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>WP-Sys-Profile</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/antonioortegajr/wp-sys-profile">View on GitHub</a>
+
+          <h1 id="project_title">WP-Sys-Profile</h1>
+          <h2 id="project_tagline">This plugin creates a custom REST API Endpoint that displays information on the WordPress install and the stack it runs on.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/antonioortegajr/wp-sys-profile/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/antonioortegajr/wp-sys-profile/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="wp-sys-profile" class="anchor" href="#wp-sys-profile" aria-hidden="true"><span class="octicon octicon-link"></span></a>WP Sys Profile</h1>
+
+<p>This plugin creates a custom REST API Endpoint that displays information on the WordPress install and the stack it runs on.</p>
+
+<p>Requires WordPress 4.4 or higher.</p>
+
+<p>No authentication is required for public route. Private route looks for a key passed in the request headers. OAuth is probably better, but this might make this plugin useful for larger scale support where getting information quickly with a little customer effort is valuable.</p>
+
+<p>NO sensitive information (usernames, passwords, etc...) is passed in the public route.</p>
+
+<p>Some is in ONLY the private route.</p>
+
+<p>If you need to report further sensitive information feel free to fork this repo.</p>
+
+<p>Displays the following information:</p>
+
+<ul>
+<li>URL</li>
+<li>Server type</li>
+<li>PHP Version</li>
+<li>PHP mem limit</li>
+<li>MySQL version</li>
+<li>cURL enabled</li>
+<li>WordPress Version</li>
+<li>Encoding</li>
+<li>WP mem limit</li>
+<li>WP max mem limit</li>
+<li>Permalink structure</li>
+<li>Is a MultiSite</li>
+<li>Current Theme</li>
+<li>Array of installed plugins</li>
+</ul>
+
+<p>If you have security concerns about displaying this kind of information publicly, fork this repo and remove any of the info you like. Or disable the public route. Or add in some further level of security. Pulls welcome.</p>
+
+<p>Live example of this on my site: <a href="http://antonioortegajr.com/wp-json/sys_profile/v1/profile">http://antonioortegajr.com/wp-json/sys_profile/v1/profile</a></p>
+
+<p>WP API docs: <a href="http://wp-api.org/guides/extending.html">http://wp-api.org/guides/extending.html</a></p>
+
+<p>I have seen other plugins that do a very similar thing. However they don't offer me an REST endpoint to argue against and ultimatly that is why I started this project.</p>
+
+<p>Any changes and with a little set up, I can know programaticly.</p>
+
+<p>The plugins that display this kind of report in WP dash, in an accessable html page, or in an external service are all neat. I just wanted an API enpoint.</p>
+
+<p>Forks and Pulls welcome. And Issues...</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">WP-Sys-Profile maintained by <a href="https://github.com/antonioortegajr">antonioortegajr</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
