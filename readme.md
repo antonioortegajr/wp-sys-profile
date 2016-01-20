@@ -10,7 +10,7 @@ No authentication is required for public route. Private route looks for a key pa
 
 NO sensitive information (usernames, passwords, etc...) is passed in the public route.
 
-Some is in the private route.
+Some is in ONLY the private route.
 
 If you need to report further sensitive information feel free to fork this repo.
 
