@@ -16,13 +16,20 @@ If you need to report further sensitive information feel free to fork this repo.
 
 Displays the following information:
 
-URL
-PHP Version
-WordPress Version
-Encoding
-Is a MultiSite
-Current Theme
-Array of installed plugins
+* URL
+* Server type
+* PHP Version
+* PHP mem limit
+* MySQL version
+* cURL enabled
+* WordPress Version
+* Encoding
+* WP mem limit
+* WP max mem limit
+* Permalink structure
+* Is a MultiSite
+* Current Theme
+* Array of installed plugins
 
 If you have security concerns about displaying this kind of information publicly, fork this repo and remove any of the info you like. Or disable the public route. Or add in some further level of security. Pulls welcome.
 
@@ -38,5 +45,3 @@ Any changes and with a little set up, I can know programaticly.
 The plugins that display this kind of report in WP dash, in an accessable html page, or in an external service are all neat. I just wanted an API enpoint.
 
 Forks and Pulls welcome. And Issues...
-
-
