@@ -24,7 +24,19 @@ function wsp_settings_init(  ) {
 }
 
 function wp_sys_profile_options_page(){
+	$gen_key = htmlspecialchars($_GET["key_gen"]);
+	$randomString = '';
+	if ($gen_key = 'y'){
+            $length = 5;
+            $randystring_one =  substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+!"), 0, $length);
+						$randystring_two =  substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+!"), 0, $length);
+						$randystring_three =  substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+!"), 0, $length);
+						$randystring_four =  substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+!"), 0, $length);
+						$randy_api_key = $randystring_one.$randystring_two.$randystring_three.$randystring_four;
+
+	}
 echo '<h1>WP Sys Profile Settings</h1>';
+echo 'API KEY: '.$randy_api_key.'<br><br><a href="/wp-admin/options-general.php?page=wp_sys_profile&key_gen=y">Create a new API key</a>';
 }
 
 ?>
