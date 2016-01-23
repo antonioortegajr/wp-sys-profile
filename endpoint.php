@@ -41,11 +41,17 @@ foreach ($all_plugins as $key => $value) {
   array_push($plugin_names, $value[Name]);
 }
 
+
+
+global $required_php_version;
+
+$php_min_version_check = PHP_VERSION;
   //profile this WordPress account
       $output = array(
       'url'=>get_site_url(),
-      'php_version'=>phpversion(),
-      'wordpress_Version'=>get_bloginfo('version'),
+      'php_version'=>PHP_VERSION,
+      'required_php_version'=>$required_php_version,
+      'wordpress_version'=>get_bloginfo('version'),
       'encoding'=>get_bloginfo('charset'),
       'multi_site'=>is_multisite(),
       'current_theme'=>get_current_theme(),
@@ -57,13 +63,18 @@ return $output;
 
 //private route
 function sys_private_profile_func( WP_REST_Request $request ){
+
 //get headers to look for a key
 $headers = array(getallheaders());
-//you can set your own key here for now.
 $api_key = $headers[0][Apikey];
-if ($api_key == '1234567890') {
 
-//look for cURL thanks to thanks to http://www.mattsbits.co.uk/item-164.html for this bit
+//api key from database
+$stored_api_key = get_option('wp-sys-profile_key');
+
+//evaluate api key
+if ($api_key == $stored_api_key) {
+
+//look for cURL. thanks to http://www.mattsbits.co.uk/item-164.html for this bit
 // Define function to test
 function _is_curl_installed() {
 	if  (in_array  ('curl', get_loaded_extensions())) {
@@ -74,7 +85,7 @@ function _is_curl_installed() {
 	}
 }
 
-// Ouput text to user based on test
+// Output text to user based on test
 if (_is_curl_installed()) {
   $got_curl = true;
 } else {
@@ -90,18 +101,24 @@ if (_is_curl_installed()) {
 $plugin_info = array();
 
 foreach ($all_plugins as $key => $value) {
+
   $plugin_private_info = $value[Name].','.$value["Version"].','.$value["PluginURI"];
   array_push($plugin_info, $plugin_private_info);
 }
 
+global $required_php_version;
+global $required_mysql_version;
 
   //profile this WordPress account private
       $output = array(
+
       'url'=>get_site_url(),
       'server_info'=>$_SERVER['SERVER_SOFTWARE'],
-      'php_version'=>phpversion(),
+      'php_version'=>PHP_VERSION,
+      'required_php_version'=>$required_php_version,
       'php_memory_limit'=>ini_get("memory_limit"),
       'mysql_info'=>mysql_get_server_info(),
+      'required_mysql_version'=>$required_mysql_version,
       'curl_enabled'=>$got_curl,
       'wordpress_version'=>get_bloginfo('version'),
       'encoding'=>get_bloginfo('charset'),
@@ -114,7 +131,7 @@ foreach ($all_plugins as $key => $value) {
       );
 }
 else {
-$output = "{apikey:notprovided}";
+$output = "{'api_key':'no'}";
 }
   return $output;
 }

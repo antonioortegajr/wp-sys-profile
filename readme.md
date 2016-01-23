@@ -45,3 +45,5 @@ Any changes and with a little set up, I can know programaticly.
 The plugins that display this kind of report in WP dash, in an accessable html page, or in an external service are all neat. I just wanted an API enpoint.
 
 Forks and Pulls welcome. And Issues...
+
+GitHub Page: http://antonioortegajr.github.io/wp-sys-profile/

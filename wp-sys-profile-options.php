@@ -26,13 +26,17 @@ function wsp_settings_init(  ) {
 function wp_sys_profile_options_page(){
 	$gen_key = htmlspecialchars($_GET["key_gen"]);
 	$randomString = '';
-	if ($gen_key = 'y'){
+
+
+	if ($gen_key !== null){
             $length = 5;
+						//I should probably make this a function
             $randystring_one =  substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+!"), 0, $length);
 						$randystring_two =  substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+!"), 0, $length);
 						$randystring_three =  substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+!"), 0, $length);
 						$randystring_four =  substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+!"), 0, $length);
 						$randy_api_key = $randystring_one.$randystring_two.$randystring_three.$randystring_four;
+add_option( 'wp-sys-profile_key', $randy_api_key);
 
 	}
 echo '<h1>WP Sys Profile Settings</h1>';
