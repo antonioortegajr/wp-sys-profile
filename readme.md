@@ -38,11 +38,11 @@ Live example of this on my site: http://antonioortegajr.com/wp-json/sys_profile/
 
 WP API docs: http://wp-api.org/guides/extending.html
 
-I have seen other plugins that do a very similar thing. However they don't offer me an REST endpoint to argue against and ultimatly that is why I started this project.
+I have seen other plugins that do a very similar thing. However they don't offer me an REST endpoint to argue against and ultimately that is why I started this project.
 
-Any changes and with a little set up, I can know programaticly.
+Any changes and with a little set up, I can know programmatically.
 
-The plugins that display this kind of report in WP dash, in an accessable html page, or in an external service are all neat. I just wanted an API enpoint.
+The plugins that display this kind of report in WP dash, in an accessible html page, or in an external service are all neat. I just wanted an API endpoint.
 
 Forks and Pulls welcome. And Issues...
 
