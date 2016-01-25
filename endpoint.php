@@ -38,7 +38,7 @@ $all_plugins = get_plugins();
 $plugin_names = array();
 
 foreach ($all_plugins as $key => $value) {
-  array_push($plugin_names, $value[Name]);
+  array_push($plugin_names, $value["Name"]);
 }
 
 
@@ -66,7 +66,7 @@ function sys_private_profile_func( WP_REST_Request $request ){
 
 //get headers to look for a key
 $headers = array(getallheaders());
-$api_key = $headers[0][Apikey];
+$api_key = $headers[0]["Apikey"];
 
 //api key from database
 $stored_api_key = get_option('wp-sys-profile_key');
@@ -102,7 +102,7 @@ $plugin_info = array();
 
 foreach ($all_plugins as $key => $value) {
 
-  $plugin_private_info = $value[Name].','.$value["Version"].','.$value["PluginURI"];
+  $plugin_private_info = $value["Name"].','.$value["Version"].','.$value["PluginURI"];
   array_push($plugin_info, $plugin_private_info);
 }
 
